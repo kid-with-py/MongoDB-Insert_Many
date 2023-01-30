@@ -1,12 +1,21 @@
 
-
+### pymongo is the library which helps to interact with MongoDB using Python ###
+ 
 import pymongo
+
+### Creating URI for MongoDB ###
 
 client=pymongo.MongoClient('mongodb://localhost:27017/')
 
+### Setting DB's Name ###
+
 mydatabase=client['Employee']
 
+### Setting collection's(employeeinfo) Name ###
+
 info=mydatabase.employeeinfo
+
+### Creating Collection ###
 
 records=[{
     'firstname':'Jhon',
@@ -25,6 +34,8 @@ records=[{
     'lastname':'Surendran',
     'job':'Analyst'
 }]
+
+### Inserting The Data into the database-collection ###
 
 data=info.insert_many(records)
 
